@@ -1,3 +1,5 @@
+
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
@@ -20,7 +22,11 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `uc11`
 --
+DROP DATABASE IF EXISTS uc11;
 
+CREATE DATABASE uc11;
+
+USE uc11;
 -- --------------------------------------------------------
 
 --
