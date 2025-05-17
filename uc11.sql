@@ -27,6 +27,7 @@ DROP DATABASE IF EXISTS uc11;
 CREATE DATABASE uc11;
 
 USE uc11;
+
 -- --------------------------------------------------------
 
 --
@@ -36,7 +37,7 @@ USE uc11;
 CREATE TABLE `produtos` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nome` text DEFAULT NULL,
-  `valor` int(11) DEFAULT NULL,
+  `valor` decimal(11) DEFAULT NULL,
   `status` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
