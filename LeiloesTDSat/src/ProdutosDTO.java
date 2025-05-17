@@ -9,7 +9,7 @@ public class ProdutosDTO {
     public ProdutosDTO() {
     }
 
-    public ProdutosDTO(Integer id, String nome, Double valor, String status) {
+    public ProdutosDTO (Integer id, String nome, Double valor, String status) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
