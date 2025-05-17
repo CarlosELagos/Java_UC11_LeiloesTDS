@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/TDS/Projeto%20leilão/LeiloesTDSat/src/listagemVIEW.java</file>
+            <file>file:/D:/TDS/Projeto%20leilão/LeiloesTDSat/src/ProdutosDTO.java</file>
             <file>file:/D:/TDS/Projeto%20leilão/LeiloesTDSat/src/CadastroVIEW.java</file>
-            <file>file:/D:/TDS/Projeto%20leilão/LeiloesTDSat/src/Main.java</file>
+            <file>file:/D:/TDS/Projeto%20leilão/LeiloesTDSat/src/ProdutosDAO.java</file>
+            <file>file:/D:/TDS/Projeto%20leilão/LeiloesTDSat/src/conectaDAO.java</file>
         </group>
     </open-files>
 </project-private>

@@ -25,8 +25,13 @@ public class ProdutosDAO {
     public void cadastrarProduto (ProdutosDTO produto){
         
         
-        //conn = new conectaDAO().connectDB();
+        conn = new conectaDAO().connectDB();
+      /*
+      
+        voltar no projeto da uc10 e implementar o cadastro com jdbc.
+        ...
         
+      */  
         
     }
     
