@@ -26,13 +26,21 @@ public class ProdutosDAO {
         
         
         conn = new conectaDAO().connectDB();
-      /*
-      
-        voltar no projeto da uc10 e implementar o cadastro com jdbc.
-        ...
+        String sql = "INSERT INTO `produtos` (`nome`, `valor`, `status`) VALUES" + "(?,?,?)";
         
-      */  
+        try{
+            
+            PreparedStatement stmt = this.conn.prepareStatement(sql);
+            stmt.setString(1, produto.getNome());
+            stmt.setDouble(2, produto.getValor());
+            stmt.setString(3, produto.getStatus());
+            stmt.execute();
         
+        }
+        catch (Exception e){
+            System.out.println("Erro ao salval cadastro do produto: " + e.getMessage());
+        }
+
     }
     
     public ArrayList<ProdutosDTO> listarProdutos(){
