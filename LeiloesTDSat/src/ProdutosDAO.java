@@ -1,12 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author Adm
- */
 
 import java.awt.List;
 import java.sql.PreparedStatement;
@@ -68,8 +59,47 @@ public class ProdutosDAO {
         return null;
     }
     
-    
-    
-        
-}
+    public void venderProduto(ProdutosDTO produto) {
 
+        conn = new conectaDAO().connectDB();
+        String sql = "UPDATE produtos SET status = 'Vendido' WHERE id = ?";
+
+        try {
+
+            PreparedStatement stmt = this.conn.prepareStatement(sql);
+            stmt.setInt(1, produto.getId());
+            stmt.execute();
+            JOptionPane.showMessageDialog(null, "Produto vendido!!!");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao vender produto!! " + e.getMessage());
+        }
+
+    }
+
+    public ArrayList<ProdutosDTO> listarProdutosVendidos() {
+
+        conn = new conectaDAO().connectDB();
+        
+        String sql = "SELECT * FROM produtos WHERE status = 'Vendido'";
+
+        try {
+            PreparedStatement stmt = this.conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            ArrayList<ProdutosDTO> listagem = new ArrayList<>();
+            while (rs.next()) {
+                ProdutosDTO produto = new ProdutosDTO();
+                produto.setId(rs.getInt("id"));
+                produto.setNome(rs.getString("nome"));
+                produto.setValor(rs.getDouble("valor"));
+                produto.setStatus(rs.getString("status"));
+                listagem.add(produto);
+            }
+            return listagem;
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
+        }
+        return null;
+    }
+}
